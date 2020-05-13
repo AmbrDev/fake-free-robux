@@ -85,7 +85,7 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     const dialog = document.createElement('div')
     dialog.classList.add('dia')
     dialog.innerHTML = `
-        <div>To verify that you are a human, <br><a onclick="location = './trolled.html'" rel="noopener" target="_blank" href="https://theannoyingsite.com">go to this site</a> and click the cat.</div>`
+        <div>To verify that you are a human, <br><a onclick="location = './trolled.html'" href="https://theannoyingsite.com">go to this site</a> and click the cat.</div>`
     document.body.appendChild(dialog)
   })
   .catch(reason=>{
