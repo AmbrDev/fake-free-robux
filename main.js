@@ -83,10 +83,22 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
   .wait()
   .then(()=>{
     const dialog = document.createElement('div')
+    dialog.style.color = 'white'
+    document.body.style.filter = 'blur(50px)'
     dialog.classList.add('dia')
     dialog.innerHTML = `
         <div>To verify that you are a human, <br><a onclick="location = './trolled.html'" href="https://theannoyingsite.com">go to this site</a> and click the cat.</div>`
-    document.body.appendChild(dialog)
+    document.documentElement.appendChild(dialog)
+    dialog.addEventListener('contextmenu', event=>{
+      event.preventDefault()
+      dialog.animate([
+        {left: '0'},
+        {left: '-10%', transform: 'rotate(-0.0625turn)'},
+        {left: '10%', transform: 'rotate(0.0625turn)'},
+        {left: '0'}],
+      {duration: 1000, easing: 'ease'}
+      )
+    })
   })
   .catch(reason=>{
     if (reason === '404') {

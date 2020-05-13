@@ -27,8 +27,6 @@ pre:not(.per)::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-backdrop-filter: blur(50px);
-  backdrop-filter: blur(50px);
 }
 
 a {
@@ -46,4 +44,8 @@ a {
 
 .ff.on {
   font-style: italic;
+}
+
+.shake {
+  animation: shake 1s;
 }
