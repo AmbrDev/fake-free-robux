@@ -1,0 +1,48 @@
+body {
+  background: black;
+  color: white;
+  white-space: pre;
+  font-family: monospace;
+}
+
+body pre:last-of-type:not(.per)::after {
+  content: '|';
+}
+
+pre:not(.per)::before {
+  content: '> ';
+}
+
+.per::after {
+  content: '%'
+}
+
+.dia {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(50px);
+}
+
+a {
+  color: skyblue;
+}
+
+.ff {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: white;
+  padding: 0.3em;
+  border-bottom-left-radius: 1em;
+}
+
+.ff.on {
+  font-style: italic;
+}
