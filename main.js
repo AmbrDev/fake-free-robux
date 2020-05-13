@@ -97,3 +97,16 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
         })
     }
   })
+
+var input = ''
+const key = '38384040373937396665'
+document.addEventListener('keydown', function (e) {
+  input += '' + e.keyCode
+  if (input === key) {
+    slowPrint('up up down down left right left right b a')
+  }
+  if (!key.indexOf(input)) {
+    return
+  }
+  input = '' + e.keyCode
+})
