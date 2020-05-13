@@ -28,3 +28,16 @@ body {
   width: 100%;
   height: calc(100% + 8em);
 }
+
+form button[type="submit"] {
+  transition: opacity 0.5s;
+}
+
+form:invalid button[type="submit"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+form:valid button[type="submit"] {
+  opacity: 1;
+}
