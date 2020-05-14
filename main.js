@@ -85,15 +85,15 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     bar.max = 100
     bar.value = 0
     document.body.appendChild(bar)
-    function addToBar () {
+    function percent () {
       if (++bar.value < 50) {
-        setTimeout(addToBar, devmode ? 1 : 50)
+        setTimeout(percent, devmode ? 1 : 50)
       } else {
         setTimeout(resolve, devmode ? 20 : 1000)
       }
     }
 
-    addToBar()
+    percent()
   }))
   // It wouldn't a "free game cheat" website without this
   .then(()=>slowPrint('Wait a minute— we need you to verify you aren\'t a bot.'))
