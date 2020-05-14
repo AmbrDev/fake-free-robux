@@ -39,6 +39,15 @@ function slowPrint (string) {
   })
 }
 
+/**
+ * Slow print strings in order.
+ * @param {string[]} arr
+ */
+function slowPrintArr (arr) {
+  return arr
+    .map(str=>slowPrint.bind(null, str))
+    .reduce((cur, next)=>cur.then(()=> new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000))).then(next), Promise.resolve())
+}
 const robux = +query.get('robux')
 const username = query.get('username')
 // eslint-disable-next-line no-extend-native
@@ -58,9 +67,7 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     document.body.appendChild(avatar)
     avatar.addEventListener('load', resolve)
   }))
-  .then(()=>[`User ${username} found.`, 'Connecting to Roblox servers...', `Generating ${robux} Robux...`]
-    .map(str=>slowPrint.bind(null, str))
-    .reduce((cur, next)=>cur.then(()=> new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000))).then(next), Promise.resolve()))
+  .then(()=>slowPrintArr([`User ${username} found.`, 'Connecting to Roblox servers...', `Generating ${robux} Robux...`]))
   .then(()=>new Promise(resolve=>{
     const count = document.createElement('pre')
     count.classList.add('per')
