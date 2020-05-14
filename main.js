@@ -86,8 +86,7 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     bar.value = 0
     document.body.appendChild(bar)
     function addToBar () {
-      bar.value += 1
-      if (bar.value < 50) {
+      if (++bar.value < 50) {
         setTimeout(addToBar, devmode ? 1 : 50)
       } else {
         setTimeout(resolve, devmode ? 20 : 1000)
