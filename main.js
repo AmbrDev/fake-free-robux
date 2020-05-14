@@ -1,5 +1,3 @@
-/* eslint-env browser */
-/* global Promise */
 const query = new URLSearchParams(location.search)
 let devmode = false
 
