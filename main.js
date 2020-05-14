@@ -2,6 +2,9 @@
 /* global Promise */
 const query = new URLSearchParams(location.search)
 let devmode = false
+
+const robux = query.get('robux')
+const username = query.get('username')
 if (location.hostname === 'localhost') {
   const indicator = document.createElement('button')
   indicator.innerText = '⏩'
@@ -50,8 +53,6 @@ function slowPrintArr (arr) {
     .map(str=>slowPrint.bind(null, str))
     .reduce((cur, next)=>cur.then(()=> new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000))).then(next), Promise.resolve())
 }
-const robux = +query.get('robux')
-const username = query.get('username')
 // eslint-disable-next-line no-extend-native
 Promise.prototype.wait = function () {
   return this.then(()=> new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000))) // delay
