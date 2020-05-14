@@ -1,8 +1,11 @@
+// @ts-check
 const query = new URLSearchParams(location.search)
 let devmode = false
 
 const robux = query.get('robux')
 const username = query.get('username')
+
+// Create the fast forward button if the site is hosted on localhost
 if (location.hostname === 'localhost') {
   const indicator = document.createElement('button')
   indicator.innerText = '⏩'
