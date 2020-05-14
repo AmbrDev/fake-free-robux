@@ -73,6 +73,7 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
   .then(()=>new Promise(resolve=>{
     const bar = document.createElement('progress')
     bar.max = 100
+    bar.value = 0
     document.body.appendChild(bar);
     (function addToBar () {
       bar.value += 1
