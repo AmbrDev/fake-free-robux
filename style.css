@@ -29,19 +29,6 @@ body {
   height: calc(100% + 8em);
 }
 
-form button[type="submit"] {
-  transition: opacity 0.5s;
-}
-
-form:invalid button[type="submit"] {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-form:valid button[type="submit"] {
-  opacity: 1;
-}
-
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out
 }
