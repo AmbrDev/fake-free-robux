@@ -21,16 +21,17 @@ if (!(query.get('robux') && query.get('username'))) {
 }
 
 /**
- * Simuate typing in a terminal
+ * Simuate typing.
+ * The text will be typed in a pre tag created in the body.
  *
- * @param {string} string
+ * @param {string} text The text that will be typed.
  * @returns {Promise<void>} A Promise that resolves when the string is completely typed
  */
-function slowPrint (string) {
+function slowPrint (text) {
   return new Promise((resolve) => {
     const line = document.createElement('pre')
     document.body.appendChild(line)
-    const stringarr = string.split('')
+    const stringarr = text.split('')
     function print () {
       line.innerText += stringarr.shift()
       if (stringarr[0]) {
