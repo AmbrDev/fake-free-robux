@@ -51,7 +51,7 @@ function slowPrint (string) {
 function slowPrintArr (arr) {
   return arr
     .map(str=>slowPrint.bind(null, str))
-    .reduce((cur, next)=>cur.then(()=> new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000))).then(next), Promise.resolve())
+    .reduce((prev, next)=>prev.then(()=> new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000))).then(next), Promise.resolve())
 }
 // eslint-disable-next-line no-extend-native
 Promise.prototype.wait = function () {
