@@ -12,8 +12,9 @@ if (location.hostname === 'localhost') {
   })
   document.body.appendChild(indicator)
 }
+const redirect = () => location = './'
 if (!(query.get('robux') && query.get('username'))) {
-  location = './'
+  redirect()
 }
 
 /**
@@ -63,7 +64,7 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     avatar.src = 'https://roblox.com/Thumbs/Avatar.ashx?x=420&y=420&username=' + query.get('username')
     avatar.addEventListener('error', ()=>{
       avatar.remove()
-      reject('404')
+      reject('NOT_FOUND')
     })
     document.body.appendChild(avatar)
     avatar.addEventListener('load', resolve)
@@ -95,12 +96,10 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     })
   })
   .catch(reason=>{
-    if (reason === '404') {
+    if (reason === 'NOT_FOUND') {
       slowPrint(`${username} is not on Roblox. Redirecting you to the form...`)
         .wait()
-        .then(()=>{
-          location = './'
-        })
+        .then(redirect)
     }
   })
 

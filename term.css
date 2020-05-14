@@ -49,3 +49,16 @@ a {
 .shake {
   animation: shake 1s;
 }
+
+img {
+  animation: appear 1s forwards;
+}
+
+@keyframes appear {
+  from {
+    height: 0;
+  }
+  to {
+    height: 300px;
+  }
+}
