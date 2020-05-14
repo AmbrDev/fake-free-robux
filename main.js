@@ -54,9 +54,9 @@ function slowPrintArr (arr) {
     .map(str=>slowPrint.bind(null, str))
     .reduce((prev, next)=>prev.then(()=> new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000))).then(next), Promise.resolve())
 }
-// eslint-disable-next-line no-extend-native
+
 Promise.prototype.wait = function () {
-  return this.then(()=> new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000))) // delay
+  return this.then(value=> new Promise(resolve=>setTimeout(()=>resolve(value), devmode ? 20 : 1000))) // delay
 }
 
 // why is this like this
