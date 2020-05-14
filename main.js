@@ -1,9 +1,10 @@
 // @ts-check
-const query = new URLSearchParams(location.search)
 let devmode = false
 
-const robux = query.get('robux')
-const username = query.get('username')
+// Get the options from the URL.
+const query = new URLSearchParams(location.search)
+const robux = query.get('robux') || 'an ungodly amount of'
+const username = query.get('username') || 'builderman'
 
 // Create the fast forward button if the site is hosted on localhost
 if (location.hostname === 'localhost') {
@@ -16,10 +17,8 @@ if (location.hostname === 'localhost') {
   })
   document.body.appendChild(indicator)
 }
-const redirect = () => location = './'
-if (!(query.get('robux') && query.get('username'))) {
-  redirect()
-}
+
+const redirect = () => location = './' // Take the user back to the form submission page.
 
 /**
  * Simuate typing.
