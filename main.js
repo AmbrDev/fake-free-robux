@@ -1,10 +1,14 @@
 // @ts-check
-let devmode = false
 
 // Get the options from the URL.
 const query = new URLSearchParams(location.search)
 const robux = query.get('robux') || 'an ungodly amount of'
 const username = query.get('username') || 'builderman'
+
+/**
+ * Is fast forward enabled?
+ */
+let devmode = false
 
 // Create the fast forward button if the site is hosted on localhost
 if (location.hostname === 'localhost') {
