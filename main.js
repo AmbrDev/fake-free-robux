@@ -109,12 +109,15 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
       )
     })
   })
-  .catch(reason=>{
-    if (reason === 'NOT_FOUND') {
-      slowPrint(`${username} is not on Roblox. Redirecting you to the form...`)
-        .wait()
-        .then(redirect)
+  .catch(async reason=>{
+    switch (reason) {
+    case 'NOT_FOUND':
+      await slowPrint(`${username} is not on Roblox.  Redirecting you to the form...`)
+      break
+    default:
+      await slowPrint('An error has occurred. Redirecting you to the form...')
     }
+    setTimeout(redirect, 1000)
   })
 
 var input = ''
