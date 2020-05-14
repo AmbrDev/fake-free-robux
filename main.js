@@ -47,7 +47,7 @@ function slowPrint (text) {
 /**
  * Slow print strings in order.
  * @see slowPrint
- * @param {string[]} arr
+ * @param {string[]} arr Lines of text
  * @returns {Promise<void>} A Promise that resolves when all strings are done typing
  */
 function slowPrintArr (arr) {
