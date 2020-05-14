@@ -69,23 +69,12 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     avatar.addEventListener('load', resolve)
   }))
   .then(()=>slowPrintArr([`User ${username} found.`, 'Connecting to Roblox servers...', `Generating ${robux} Robux...`]))
-  .then(()=>new Promise(resolve=>{
-    const count = document.createElement('pre')
-    count.classList.add('per')
-    document.body.appendChild(count)
-    count.innerText = '0'
-    function addRobux () {
-      if (+count.innerText < 50) {
-        count.innerText -= - 1
-        setTimeout(addRobux, devmode ? 1 : 50)
-      } else {
-        resolve()
-      }
-    }
-    addRobux()
-  }))
+  .then(()=>slowPrintArr(['0%', '25%', '50%']))
+  .wait()
+  // It wouldn't a "free game cheat" website without this
   .then(()=>slowPrint('Wait a minute— we need you to verify you aren\'t a bot.'))
   .wait()
+  // Link to TheAnnoyingSite
   .then(()=>{
     const dialog = document.createElement('div')
     dialog.style.color = 'white'
