@@ -74,7 +74,11 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     document.body.appendChild(avatar)
     avatar.addEventListener('load', resolve)
   }))
-  .then(()=>slowPrintArr([`User ${username} found.`, 'Connecting to Roblox servers...', `Generating ${robux} Robux...`]))
+  .then(()=>slowPrintArr([ // Messages printed in order
+    `User ${username} found.`,
+    'Connecting to Roblox servers...',
+    `Generating ${robux} Robux...`
+  ]))
   .then(()=>new Promise(resolve=>{
     const bar = document.createElement('progress')
     bar.max = 100
