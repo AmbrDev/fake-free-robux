@@ -51,14 +51,16 @@ a {
 }
 
 img {
-  animation: appear 1s forwards;
+  animation: appear 0.5s;
 }
 
 @keyframes appear {
   from {
-    height: 0;
+    position: absolute;
+    left: -100%
   }
   to {
-    height: 300px;
+    position: absolute;
+    left: 0;
   }
 }
