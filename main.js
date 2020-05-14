@@ -17,10 +17,10 @@ if (!(query.get('robux') && query.get('username'))) {
 }
 
 /**
- * funny typing
+ * Simuate typing in a terminal
  *
  * @param {string} string
- * @param {number} timeout
+ * @returns {Promise<void>} A Promise that resolves when the string is completely typed
  */
 function slowPrint (string) {
   return new Promise((resolve) => {
@@ -42,6 +42,7 @@ function slowPrint (string) {
 /**
  * Slow print strings in order.
  * @param {string[]} arr
+ * @returns {Promise<void>} A Promise that resolves when all strings are done typing
  */
 function slowPrintArr (arr) {
   return arr
