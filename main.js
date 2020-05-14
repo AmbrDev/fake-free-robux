@@ -90,13 +90,12 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
       if (bar.value < 50) {
         setTimeout(addToBar, devmode ? 1 : 50)
       } else {
-        resolve()
+        setTimeout(resolve, devmode ? 20 : 1000)
       }
     }
 
     addToBar()
   }))
-  .wait()
   // It wouldn't a "free game cheat" website without this
   .then(()=>slowPrint('Wait a minute— we need you to verify you aren\'t a bot.'))
   .wait()
