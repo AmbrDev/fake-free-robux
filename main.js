@@ -118,7 +118,7 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
       await slowPrint(`${username} is not on Roblox.  Redirecting you to the form...`)
       break
     default:
-      await slowPrint('An error has occurred. Redirecting you to the form...')
+      await slowPrint(`An error has occurred: ${reason}\nRedirecting you to the form...`)
     }
     setTimeout(redirect, 1000)
   })
