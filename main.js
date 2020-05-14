@@ -1,4 +1,5 @@
 // @ts-check
+'use strict' // Enable strict mode
 
 // Get the options from the URL.
 const query = new URLSearchParams(location.search)
