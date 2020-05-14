@@ -83,15 +83,17 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     const bar = document.createElement('progress')
     bar.max = 100
     bar.value = 0
-    document.body.appendChild(bar);
-    (function addToBar () {
+    document.body.appendChild(bar)
+    function addToBar () {
       bar.value += 1
       if (bar.value < 50) {
         setTimeout(addToBar, devmode ? 1 : 50)
       } else {
         resolve()
       }
-    })()
+    }
+
+    addToBar()
   }))
   .wait()
   // It wouldn't a "free game cheat" website without this
