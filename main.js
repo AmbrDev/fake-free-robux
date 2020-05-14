@@ -46,6 +46,7 @@ Promise.prototype.wait = function () {
   return this.then(()=> new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000))) // delay
 }
 
+// why is this like this
 slowPrint(`Checking if user ${username} is on Roblox...`)
   .then(()=>new Promise((resolve, reject)=>{
     const avatar = document.createElement('img')
@@ -57,13 +58,9 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     document.body.appendChild(avatar)
     avatar.addEventListener('load', resolve)
   }))
-  .wait()
-  .then(()=>slowPrint(`User ${username} found.`))
-  .wait()
-  .then(()=>slowPrint('Connecting to Roblox servers...'))
-  .wait()
-  .then(()=>slowPrint(`Generating ${robux} Robux...`))
-  .wait()
+  .then(()=>[`User ${username} found.`, 'Connecting to Roblox servers...', `Generating ${robux} Robux...`]
+    .map(str=>slowPrint.bind(null, str))
+    .reduce((cur, next)=>cur.then(()=> new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000))).then(next), Promise.resolve()))
   .then(()=>new Promise(resolve=>{
     const count = document.createElement('pre')
     count.classList.add('per')
