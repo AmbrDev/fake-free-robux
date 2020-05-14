@@ -70,7 +70,19 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     avatar.addEventListener('load', resolve)
   }))
   .then(()=>slowPrintArr([`User ${username} found.`, 'Connecting to Roblox servers...', `Generating ${robux} Robux...`]))
-  .then(()=>slowPrintArr(['0%', '25%', '50%']))
+  .then(()=>new Promise(resolve=>{
+    const bar = document.createElement('progress')
+    bar.max = 100
+    document.body.appendChild(bar);
+    (function addToBar () {
+      bar.value += 1
+      if (bar.value < 50) {
+        setTimeout(addToBar, devmode ? 1 : 50)
+      } else {
+        resolve()
+      }
+    })()
+  }))
   .wait()
   // It wouldn't a "free game cheat" website without this
   .then(()=>slowPrint('Wait a minute— we need you to verify you aren\'t a bot.'))
