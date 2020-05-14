@@ -100,7 +100,7 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
   }))
   // It wouldn't a "free game cheat" website without this
   .then(()=>slowPrint('Wait a minute— we need you to verify you aren\'t a bot.'))
-  .then(() => new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000)))
+  .then(() => new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000))) // Wait a second (or 0.02 seconds in fast forward)
   // Link to TheAnnoyingSite
   .then(()=>{
     const dialog = document.createElement('div')
