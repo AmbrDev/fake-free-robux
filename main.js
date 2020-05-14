@@ -63,6 +63,9 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
   .then(()=>new Promise((resolve, reject)=>{
     const avatar = document.createElement('img')
     avatar.src = 'https://roblox.com/Thumbs/Avatar.ashx?x=420&y=420&username=' + query.get('username')
+    if (devmode) {
+      avatar.classList.add('devmode')
+    }
     avatar.addEventListener('error', ()=>{
       avatar.remove()
       reject('NOT_FOUND')
