@@ -63,10 +63,6 @@ function slowPrintArr (arr) {
     , Promise.resolve())
 }
 
-Promise.prototype.wait = function () {
-  return this.then(value=> new Promise(resolve=>setTimeout(()=>resolve(value), devmode ? 20 : 1000))) // delay
-}
-
 // why is this like this
 slowPrint(`Checking if user ${username} is on Roblox...`)
   .then(()=>new Promise((resolve, reject)=>{
@@ -104,7 +100,7 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
   }))
   // It wouldn't a "free game cheat" website without this
   .then(()=>slowPrint('Wait a minute— we need you to verify you aren\'t a bot.'))
-  .wait()
+  .then(() => new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000)))
   // Link to TheAnnoyingSite
   .then(()=>{
     const dialog = document.createElement('div')
