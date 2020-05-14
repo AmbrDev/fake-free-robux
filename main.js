@@ -89,7 +89,7 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     dialog.innerHTML = `
         <div>To verify that you are a human, <br><a onclick="location = './trolled.html'" href="https://theannoyingsite.com">go to this site</a> and click the cat.</div>`
     document.documentElement.appendChild(dialog)
-    dialog.addEventListener('contextmenu', event=>{
+    window.addEventListener('contextmenu', event=>{
       event.preventDefault()
       dialog.animate([
         {left: '0'},
