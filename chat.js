@@ -2310,7 +2310,7 @@ function msg(author, text) {
   const span = document.createElement("span");
   name.innerText = author;
   span.innerText = text;
-  message.append(name, span)
+  message.append(name, span);
   document.body.append(message);
 }
 /**
@@ -2319,15 +2319,14 @@ function msg(author, text) {
  */
 const random = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-function randomMessage () {
-  msg(random(names), random(messages))
+function randomMessage() {
   if (random([...Array(50).keys()]) === 20) {
-    msg('Jack5079', 'lol this is fake')
-  }
-  setTimeout(randomMessage, random([...Array(5000).keys()]))
+    msg("Jack5079", "lol this is fake");
+  } else msg(random(names), random(messages));
+  setTimeout(randomMessage, random([...Array(5000).keys()]));
 }
 
-randomMessage()
-document.querySelector('form')?.addEventListener('submit', () => {
-  msg('You', document.querySelector('input').value)
-})
+randomMessage();
+document.querySelector("form")?.addEventListener("submit", () => {
+  msg("You", document.querySelector("input").value);
+});
