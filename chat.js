@@ -2320,7 +2320,7 @@ function msg(author, text) {
 const random = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 function randomMessage() {
-  if (random([...Array(50).keys()]) === 20) {
+  if (random([...Array(500).keys()]) === 20) {
     msg("Jack5079", "lol this is fake");
   } else msg(random(names), random(messages));
   setTimeout(randomMessage, random([...Array(5000).keys()]));
