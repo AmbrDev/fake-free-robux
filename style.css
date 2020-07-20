@@ -25,22 +25,8 @@ body {
   -moz-user-select: none;
   user-select: none;
   pointer-events: none;
-  width: 100%;
-  height: 100%;
-}
-
-@media (min-aspect-ratio: 16/9) {
-  .header-video {
-    width: 100%;
-    height: auto;
-  }
-}
-
-@media (max-aspect-ratio: 16/9) {
-  .header-video {
-    width: auto;
-    height: 100%;
-  }
+  width: 100vw;
+  height: 100vh;
 }
 
 .github-corner:hover .octo-arm {
