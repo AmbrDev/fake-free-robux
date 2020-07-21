@@ -1,4 +1,4 @@
-const names = [ // Probably the biggest list of usernames I've ever seen
+const names = [
   "0_Bytes",
   "0_V",
   "0Ch1ll",
@@ -2269,11 +2269,16 @@ const names = [ // Probably the biggest list of usernames I've ever seen
   "zzueI",
 ];
 
-const messages = [ // From actual scam sites lmao
+/**
+ * Free robux scam site messages.
+ * Modified from another site to fit this one.
+ * @type {string[]}
+ */
+const messages = [
   "Thank you mateee! your hack is working boyyy",
   "does this work?",
-  "do you have facebook website? i want to follow you",
-  "Of course it is working :D",
+  "do you have a twitter? i want to follow you",
+  "Of course it is working 😄",
   "just testing",
   "hello guys lets generateeee",
   "did you start generator?",
@@ -2283,20 +2288,16 @@ const messages = [ // From actual scam sites lmao
   "I generated today some robux, can I generate it one more time today??",
   "who made this freaking website????",
   "i tought this is scam, but I generated it and suprise",
-  "Thank you lol I am so happy :D",
-  "I am 13 years old and I love this website, I will show it to mum hehe :DD",
-  "Does robux help you in this game a lot?",
+  "Thank you lol I am so happy 😄",
+  "I am 13 years old and I love this website, I will show it to mum hehe 😄😄",
   "I generated today 2000 robux and bough a lot of good items!",
-  "How much do you play it daily?",
-  "Who is playing this game?",
   "can I shutdown game now??",
-  "Hello anybody want to send him robux? I generated it a lot of :D",
-  "where I can contact you to donate? I love you !!",
+  "Hello anybody want to send him robux? I generated it a lot of 😄",
+  "where I can contact you to donate? I love you!!",
   "this is working i cant belive juhuuu",
-  "happy new year lol i am just kidding happy life with a lot of robux generated",
   "Awesome, it is rare to find working generator like this one",
   "I can imagine this must be annoying for the one who play with skill",
-  "bye guys, already finish my survey easy, and robux generated successfully",
+  "bye guys, already finish my verfication easy, and robux generated successfully",
   "i cant imagine this lollll",
 ];
 /**
