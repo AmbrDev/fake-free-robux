@@ -2329,5 +2329,8 @@ function randomMessage() {
 
 randomMessage();
 document.querySelector("form")?.addEventListener("submit", () => {
-  msg("You", document.querySelector("input").value);
+  if (document.querySelector("input")?.value) {
+    const value = document.querySelector("input")?.value || '';
+    if (value) msg("You", value);
+  }
 });
