@@ -2276,9 +2276,7 @@ const names = [
  */
 const messages = [
   "Thank you mateee! your hack is working boyyy",
-  "does this work?",
   "do you have a twitter? i want to follow you",
-  "Of course it is working 😄",
   "just testing",
   "hello guys lets generateeee",
   "did you start generator?",
@@ -2290,10 +2288,7 @@ const messages = [
   "I am 13 years old and I love this website, I will show it to mum hehe 😄😄",
   "I generated today 2000 robux and bough a lot of good items!",
   "can I shutdown game now??",
-  "Hello anybody want to send him robux? I generated it a lot of 😄",
-  "where I can contact you to donate? I love you!!",
-  "this is working i cant belive juhuuu",
-  "Awesome, it is rare to find working generator like this one",
+  "where I can I donate? I love you!!",
   "i was grinding m$ rewards for months and then i found out this exists 😢 all that for nothing",
   "i cant imagine this lollll",
 ];
