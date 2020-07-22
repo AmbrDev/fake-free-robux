@@ -23,14 +23,14 @@ if (location.hostname === 'localhost') {
   document.body.appendChild(indicator)
 }
 
-const redirect = () => location = './' // Take the user back to the form submission page.
+const redirect = () => location.href = './' // Take the user back to the form submission page.
 
 /**
  * Simuate typing.
  * The text will be typed in a pre tag created in the body.
  *
  * @param {string} text The text that will be typed.
- * @returns {Promise<void>} A Promise that resolves when the string is completely typed
+ * @returns {Promise<HTMLPreElement>} A Promise that resolves when the string is completely typed
  */
 function slowPrint (text) {
   return new Promise((resolve) => {
@@ -42,7 +42,7 @@ function slowPrint (text) {
       if (stringarr[0]) {
         setTimeout(print, devmode ? 1 : 50)
       } else {
-        resolve()
+        resolve(line)
       }
     }
     print()
@@ -53,15 +53,16 @@ function slowPrint (text) {
  * Slow print strings in order.
  * @see slowPrint
  * @param {string[]} arr Lines of text
- * @returns {Promise<void>} A Promise that resolves when all strings are done typing
+ * @returns {Promise<HTMLPreElement[]>} A Promise that resolves to all the pre elements
  */
-function slowPrintArr (arr) {
-  return arr
-    .map(str=>slowPrint.bind(null, str))
-    .reduce((prev, next)=>prev
-      .then(()=> new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000)))
-      .then(next)
-    , Promise.resolve())
+async function slowPrintArr (arr) {
+  let lines = []
+  for (const string of arr) {
+    const line = await slowPrint(string)
+    await new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000)) // Wait a moment
+    lines.push(line)
+  }
+  return lines
 }
 
 // why is this like this
