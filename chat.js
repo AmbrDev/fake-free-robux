@@ -2282,12 +2282,10 @@ const messages = [
   "just testing",
   "hello guys lets generateeee",
   "did you start generator?",
-  "hahaha I love this generator in 2 sec I generated unlimited robux bro",
   "Whats up mates?",
   "I just tested and generated 20 000 robux thanks",
   "I generated today some robux, can I generate it one more time today??",
   "who made this freaking website????",
-  "i tought this is scam, but I generated it and suprise",
   "Thank you lol I am so happy 😄",
   "I am 13 years old and I love this website, I will show it to mum hehe 😄😄",
   "I generated today 2000 robux and bough a lot of good items!",
@@ -2297,12 +2295,11 @@ const messages = [
   "this is working i cant belive juhuuu",
   "Awesome, it is rare to find working generator like this one",
   "I can imagine this must be annoying for the one who play with skill",
-  "bye guys, already finish my verfication easy, and robux generated successfully",
   "i cant imagine this lollll",
 ];
 /**
  * 
- * @param {string} author The person who did this message
+ * @param {string} author The person who "wrote" this message
  * @param {string} text The content of the message
  */
 function msg(author, text) {
@@ -2321,9 +2318,7 @@ function msg(author, text) {
 const random = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 function randomMessage() {
-  if (random([...Array(500).keys()]) === 20) {
-    msg("Jack5079", "lol this is fake");
-  } else msg(random(names), random(messages));
+  msg(random(names), random(messages));
   setTimeout(randomMessage, random([...Array(5000).keys()]));
 }
 
