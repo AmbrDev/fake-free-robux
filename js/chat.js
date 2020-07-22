@@ -2294,7 +2294,7 @@ const messages = [
   "where I can contact you to donate? I love you!!",
   "this is working i cant belive juhuuu",
   "Awesome, it is rare to find working generator like this one",
-  "I can imagine this must be annoying for the one who play with skill",
+  "i was grinding m$ rewards for months and then i found out this exists 😢 all that for nothing",
   "i cant imagine this lollll",
 ];
 /**
