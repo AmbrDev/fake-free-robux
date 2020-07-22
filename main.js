@@ -115,10 +115,10 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
       event.preventDefault()
       dialog.animate([
         {left: '0'},
-        {left: '-10%', transform: 'rotate(-0.0625turn)'},
-        {left: '10%', transform: 'rotate(0.0625turn)'},
+        {left: '-1%'},
+        {left: '1%'},
         {left: '0'}],
-      {duration: 1000, easing: 'ease'}
+      {duration: 200, easing: 'linear'}
       )
     })
   })
