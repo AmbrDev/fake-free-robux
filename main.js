@@ -109,7 +109,7 @@ slowPrint(`Checking if user ${username} is on Roblox...`)
     document.body.style.filter = 'blur(50px)'
     dialog.classList.add('dia')
     dialog.innerHTML = `
-        <div>To verify that you are a human, <br><a onclick="location = './trolled.html'" href="https://theannoyingsite.com">go to this site</a> and click the cat.</div>`
+        <div>To verify that you are a human, <br><a href="https://theannoyingsite.com">go to this site</a> and click the cat.</div>`
     document.documentElement.appendChild(dialog)
     window.addEventListener('contextmenu', event=>{
       event.preventDefault()
