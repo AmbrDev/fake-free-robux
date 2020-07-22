@@ -58,8 +58,8 @@ function slowPrint (text) {
 async function slowPrintArr (arr) {
   let lines = []
   for (const string of arr) {
+    await new Promise((resolve) => setTimeout(resolve, devmode ? 20 : 1000)); // Wait a moment
     const line = await slowPrint(string)
-    await new Promise(resolve=>setTimeout(resolve, devmode ? 20 : 1000)) // Wait a moment
     lines.push(line)
   }
   return lines
