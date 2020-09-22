@@ -2291,6 +2291,15 @@ const messages = [
   "where I can I donate? I love you!!",
   "i was grinding m$ rewards for months and then i found out this exists 😢 all that for nothing",
   "i cant imagine this lollll",
+  "THANK YOU OMGGG",
+  "subscribe to pewdiepie",
+  "this is amazing",
+  "did it work for other ppl too?",
+  "gamepasses are cool",
+  "free robux indeed",
+  "i thought this was fake, turns out, its not",
+  "not a scam, wtf",
+  "omg this is soo coool",
 ];
 /**
  * 
